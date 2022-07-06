@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
+import SimionGame from './simionGame'
 
 const HomeRoute = () => <Text>Home</Text>;
 
-const GameRoute = () => <Text>Game</Text>;
+const GameRoute = () => <SimionGame/>;
 
 const ScoreRoute = () => <Text>Score</Text>;
 
