@@ -2,12 +2,14 @@ import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
 import SimionGame from './simionGame';
 import HomePage from './homeScreen';
+// import Draggable from './dropArea';
+import DragAndDrop from './dragAndDrop'
 
 const HomeRoute = () => <HomePage/>;
 
 const GameRoute = () => <SimionGame/>;
 
-const ScoreRoute = () => <Text>Score</Text>;
+const ScoreRoute = () => <DragAndDrop/>;
 
 const MyComponent = () => {
   const [index, setIndex] = React.useState(0);
