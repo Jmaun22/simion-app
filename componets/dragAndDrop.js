@@ -92,10 +92,21 @@ export default function App() {
       "id": 16,
       "name": "P",
       "background_color": '#ffaaff'
-    }
+    },
+    {
+        "id": 17,
+        "name": "Z",
+        "background_color": '#ffaaff'
+      },
+      {
+        "id": 18,
+        "name": "N",
+        "background_color": '#ffaaff'
+      }
   ];
 
   const [receivingItemList, setReceivedItemList] = React.useState(FirstReceivingItemList);
+
   const [dragItemMiddleList, setDragItemListMiddle] = React.useState(draggableItemList);
 
   const DragUIComponent = ({ item, index }) => {
@@ -137,6 +148,7 @@ export default function App() {
           console.log('onReceiveDragDrop :: newReceivingItemList', newReceivingItemList);
           newReceivingItemList[index] = selected_item;
           setReceivedItemList(newReceivingItemList);
+ 
 
           let newDragItemMiddleList = [...dragItemMiddleList];
           console.log('onReceiveDragDrop :: newDragItemMiddleList 1', newDragItemMiddleList);
@@ -160,9 +172,11 @@ export default function App() {
       </View>
       <DraxProvider>
         <View style={styles.container}>
+        {/* term */}
           <View style={styles.receivingContainer}>
             {receivingItemList.map((item, index) => ReceivingZoneUIComponent({ item, index }))}
           </View>
+       
           <View style={styles.draxListContainer}>
             <DraxList
               data={dragItemMiddleList}
@@ -188,6 +202,7 @@ const styles = StyleSheet.create({
   },
   centeredContent: {
     borderRadius: 10,
+
   },
   receivingZone: {
     height: (Dimensions.get('window').width / 4) - 12,
@@ -199,6 +214,7 @@ const styles = StyleSheet.create({
   },
   receiving: {
     borderColor: 'red',
+
     borderWidth: 2,
   },
   draggableBox: {
@@ -217,8 +233,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   receivingContainer: {
+    flex: 1,
+    padding: 12,
+    paddingTop: 40,
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    justifyContent: 'space-evenly'
+    flexWrap: 'wrap',
+    rowGap: '15px',
+    
   },
   itemSeparator: {
     height: 15
@@ -228,8 +250,8 @@ const styles = StyleSheet.create({
     height: 200
   },
   receivingZoneContainer: {
-    padding: 5,
-    height: 100
+    padding: 10,
+    height: 200
   },
   textStyle: {
     fontSize: 18
