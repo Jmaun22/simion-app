@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
-import SimionGame from './simionGame'
+import SimionGame from './simionGame';
+import HomePage from './homeScreen';
 
-const HomeRoute = () => <Text>Home</Text>;
+const HomeRoute = () => <HomePage/>;
 
 const GameRoute = () => <SimionGame/>;
 
