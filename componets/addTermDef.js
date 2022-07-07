@@ -1,5 +1,5 @@
-import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { useState } from 'react'; 
+import { SafeAreaView, StyleSheet, TextInput, View } from "react-native";
 import TermDef from "./termDefComp";
 import { Button } from 'react-native-paper';
 
@@ -7,15 +7,23 @@ import { Button } from 'react-native-paper';
 const AddPage = () => {
 
 
+    const [inputList, setInputList] = useState([]);
+
+
+  const onAddBtnClick = event => {
+    setInputList(inputList.concat(<TermDef key={inputList.length} />));
+  };
+
+
 
   return (
     <SafeAreaView>
-    <TermDef/>
-    <TermDef/>
 
-    <Button icon="plus-circle" mode="contained" onPress={() => console.log('Add Another')}>
-    Add Another
-  </Button>
+
+    <Button onPress={onAddBtnClick} icon="plus-circle" >Add </Button>
+
+
+      {inputList}
     
 
  

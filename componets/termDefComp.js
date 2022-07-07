@@ -1,13 +1,14 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text } from "react-native";
 
-const UselessTextInput = () => {
+const UselessTextInput = (props) => {
   const [term, onChangeTerm] = React.useState("");
   const [def, onChangeDef] = React.useState("");
 
 
   return (
     <SafeAreaView>
+    <Text>{props.text}</Text>
       <TextInput
         style={styles.input}
         onChangeText={onChangeTerm}
