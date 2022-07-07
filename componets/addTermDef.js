@@ -1,6 +1,8 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 import TermDef from "./termDefComp";
+import { Button } from 'react-native-paper';
+
 
 const AddPage = () => {
 
@@ -10,6 +12,10 @@ const AddPage = () => {
     <SafeAreaView>
     <TermDef/>
     <TermDef/>
+
+    <Button icon="plus-circle" mode="contained" onPress={() => console.log('Add Another')}>
+    Add Another
+  </Button>
     
 
  
