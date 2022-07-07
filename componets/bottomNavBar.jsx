@@ -2,12 +2,13 @@ import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
 import SimionGame from './simionGame';
 import HomePage from './homeScreen';
+import AddTermPage from "./addTermDef";
 // import Draggable from './dropArea';
 import DragAndDrop from './dragAndDrop'
 
 const HomeRoute = () => <HomePage/>;
 
-const GameRoute = () => <SimionGame/>;
+const GameRoute = () => <AddTermPage/>;
 
 const ScoreRoute = () => <DragAndDrop/>;
 
